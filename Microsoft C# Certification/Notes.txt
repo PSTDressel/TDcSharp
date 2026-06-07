@@ -1,0 +1,41 @@
+String Output can be done by using:
+- Console.WriteLine("My Text!"); <-- Each Console.WriteLine will be shown in a separate/new line (carriage return at the end of the string!)
+- Console.Write("My Text!");     <-- Each Console.Write will be appended to the previous Output
+
+- C# seems to be case sensitive!
+Works:
+Console.WriteLine("My Text!");
+Does not work:
+console.WriteLine("My Text!");
+
+- Comments are done by using 2 slashes: //
+
+Possible:
+- Single quotes (') to output 1(!) char, e.g.: Console.WriteLine('b');
+- Double quotes (") to Output 1 or more Chars (turning it into a string), e.g.: Console.WriteLine("Hello!");
+- No quotes to output integers, e.g.: Console.WriteLine(123);
+- Cast the number to float, e.g.: Console.WriteLine(0.25F);
+- Cast the number to "literal decimal", e.g.: Console.WriteLine(12.39816m);
+
+- numbers can be cast to the following float types:
+Float Type    Precision
+----------------------------
+float         ~6-9 digits
+double        ~15-17 digits  <-- Default if no manual cast is done
+decimal        28-29 digits
+
+- Booleans:
+Console.WriteLine(true);
+Console.WriteLine(false);
+
+- Declare variables:
+-- No '#' or '$'!
+-- Variable names must begin with an alphabetical letter or an underscore, not a number.
+-- Variable names are case-sensitive
+-- format: <datatype> <variablename>;
+--- examples:
+	char userOption;
+	int gameScore;
+	decimal particlesPerMillion;
+	bool processedCustomer;
+	var firstName = "Tim" <-- the data type is implied by the assigned value (in this case: string. Trying to assign an integer afterwards is not possible)
