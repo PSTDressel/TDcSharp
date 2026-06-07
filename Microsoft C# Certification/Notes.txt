@@ -1,41 +1,194 @@
-String Output can be done by using:
-- Console.WriteLine("My Text!"); <-- Each Console.WriteLine will be shown in a separate/new line (carriage return at the end of the string!)
-- Console.Write("My Text!");     <-- Each Console.Write will be appended to the previous Output
+# C# Basics
 
-- C# seems to be case sensitive!
-Works:
+## Console Output
+
+### `Console.WriteLine()`
+Prints text and automatically starts a new line afterward.
+
+```csharp
 Console.WriteLine("My Text!");
-Does not work:
+Console.WriteLine("Another Line!");
+```
+
+**Output:**
+
+```text
+My Text!
+Another Line!
+```
+
+### `Console.Write()`
+Prints text without adding a new line.
+
+```csharp
+Console.Write("My ");
+Console.Write("Text!");
+```
+
+**Output:**
+
+```text
+My Text!
+```
+
+---
+
+## Case Sensitivity
+
+C# is **case-sensitive**.
+
+✅ Works:
+
+```csharp
+Console.WriteLine("My Text!");
+```
+
+❌ Does not work:
+
+```csharp
 console.WriteLine("My Text!");
+```
 
-- Comments are done by using 2 slashes: //
+---
 
-Possible:
-- Single quotes (') to output 1(!) char, e.g.: Console.WriteLine('b');
-- Double quotes (") to Output 1 or more Chars (turning it into a string), e.g.: Console.WriteLine("Hello!");
-- No quotes to output integers, e.g.: Console.WriteLine(123);
-- Cast the number to float, e.g.: Console.WriteLine(0.25F);
-- Cast the number to "literal decimal", e.g.: Console.WriteLine(12.39816m);
+## Comments
 
-- numbers can be cast to the following float types:
-Float Type    Precision
-----------------------------
-float         ~6-9 digits
-double        ~15-17 digits  <-- Default if no manual cast is done
-decimal        28-29 digits
+Comments are created using two forward slashes (`//`).
 
-- Booleans:
+```csharp
+// This is a comment
+Console.WriteLine("Hello!");
+```
+
+---
+
+## Data Types and Literals
+
+### Character (`char`)
+
+Use **single quotes** (`'`) for a single character.
+
+```csharp
+Console.WriteLine('b');
+```
+
+### String (`string`)
+
+Use **double quotes** (`"`) for one or more characters.
+
+```csharp
+Console.WriteLine("Hello!");
+```
+
+### Integer (`int`)
+
+No quotes are required.
+
+```csharp
+Console.WriteLine(123);
+```
+
+### Float (`float`)
+
+Append `F` to create a float literal.
+
+```csharp
+Console.WriteLine(0.25F);
+```
+
+### Decimal (`decimal`)
+
+Append `m` (or `M`) to create a decimal literal.
+
+```csharp
+Console.WriteLine(12.39816m);
+```
+
+---
+
+## Floating-Point Types
+
+| Type | Approximate Precision |
+|--------|----------------------|
+| `float` | ~6–9 digits |
+| `double` | ~15–17 digits *(default for decimal numbers)* |
+| `decimal` | ~28–29 digits |
+
+---
+
+## Boolean Values
+
+```csharp
 Console.WriteLine(true);
 Console.WriteLine(false);
+```
 
-- Declare variables:
--- No '#' or '$'!
--- Variable names must begin with an alphabetical letter or an underscore, not a number.
--- Variable names are case-sensitive
--- format: <datatype> <variablename>;
---- examples:
-	char userOption;
-	int gameScore;
-	decimal particlesPerMillion;
-	bool processedCustomer;
-	var firstName = "Tim" <-- the data type is implied by the assigned value (in this case: string. Trying to assign an integer afterwards is not possible)
+**Output:**
+
+```text
+True
+False
+```
+
+---
+
+## Variables
+
+### Rules
+
+- No `#` or `$` prefixes.
+- Variable names must start with:
+  - A letter (`A-Z`, `a-z`), or
+  - An underscore (`_`)
+- Variable names cannot start with a number.
+- Variable names are case-sensitive.
+
+### Declaration Syntax
+
+```csharp
+<datatype> <variableName>;
+```
+
+### Examples
+
+```csharp
+char userOption;
+int gameScore;
+decimal particlesPerMillion;
+bool processedCustomer;
+```
+
+### Using `var`
+
+The `var` keyword allows the compiler to infer the data type from the assigned value.
+
+```csharp
+var firstName = "Tim";
+```
+
+In this example, `firstName` is automatically treated as a `string`.
+
+❌ Not allowed:
+
+```csharp
+var firstName = "Tim";
+firstName = 123;
+```
+
+Once the type is inferred, it cannot be changed.
+
+---
+
+## Quick Reference
+
+| Example | Data Type |
+|----------|-----------|
+| `'A'` | `char` |
+| `"Hello"` | `string` |
+| `123` | `int` |
+| `0.25F` | `float` |
+| `0.25` | `double` |
+| `12.39816m` | `decimal` |
+| `true` / `false` | `bool` |
+
+> **Tip:** If you write a decimal number without a suffix (`F`, `m`, etc.), C# treats it as a `double` by default.
